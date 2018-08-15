@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trivia</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/examplestyle.css')}}">
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" id="top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Trivia</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="#courses">Seller</a></li>
+          <li><a href="#pricing">FAQs</a></li>
+         <!-- <li><a href="https://launchpad.37signals.com/signin" data-toggle="modal">About us</a></li>-->
+          <li class="btn-trial"><a href="#footer">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>Send Message</h2>
+          <hr class="bottom-line">
+        </div>
+        <div id="sendmessage">Your message has been sent. Thank you!</div>
+        <div id="errormessage"></div>
+        <form action="formaction.html" method="post" role="form" class="contactForm">
+          <div class="col-md-6 col-sm-6 col-xs-12 left">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control form" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject"/>
+              <div class="validation"></div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12 right">
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+          </div>
+
+          <div class="col-xs-12">
+            <!-- Button -->
+            <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light" style="color: white; background-color: crimson;">SEND EMAIL</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+<div class="container">
+  {%block content%}
+  {%endblock%}
+</div>
+</body>
+</html>
